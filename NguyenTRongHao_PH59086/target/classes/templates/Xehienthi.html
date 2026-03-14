@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>quan li xe</h2>
+<form action="">
+    ma xe<br>
+    <input type="text" ><br>
+    ten xe<br>
+    <input type="text"><br>
+    gia<br>
+    <input type="text"><br>
+    so cho ngoi<br>
+    <input type="text"><br>
+    ma loai xe<br>
+    <select>
+        <option th:each="lx:${listloaixe}" th:value="${lx}" th:text="${lx.maloaixe}"></option>
+    </select><br>
+    <button >update</button>
+</form>
+<table border="1">
+    <tr>
+        <th>stt</th>
+        <th>ma xe</th>
+        <th>ten xe</th>
+        <th>gia</th>
+        <th>so cho ngoi</th>
+        <th>ma loai xe</th>
+        <th>ten loai xe</th>
+        <th>chuc nang</th>
+    </tr>
+    <tr th:each="x :${listxe}">
+        <td th:text="${x.id}"></td>
+        <td th:text="${x.maxe}"></td>
+        <td th:text="${x.tenxe}"></td>
+        <td th:text="${x.gia}"></td>
+        <td th:text="${x.sochongoi}"></td>
+        <td th:text="${x.loaiXe.maloaixe}"></td>
+        <td th:text="${x.loaiXe.tenloaixe}"></td>
+        <td>
+            <a href="">
+            <button>click</button></a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
